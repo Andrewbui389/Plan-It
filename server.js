@@ -1,20 +1,23 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 
-
+// Load the secrets in the .env module
 require('dotenv').config();
-
+// Connect to our database (line of code must be AFTER the above - .env)
 require('./config/database');
+// Configue passport
+require('./config/passport');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+var indexRouter = require('./routes/index');
 
-const app = express();
+
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,8 +30,27 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Custom middleware to add the logged in user
+// to the locals object so that we can access
+// user within EVERY template we render without
+// having to pass user: req.user from the controller
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
