@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 
 
 require('dotenv').config();
+
 require('./config/database');
 
 const indexRouter = require('./routes/index');
