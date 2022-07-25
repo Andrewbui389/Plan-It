@@ -13,7 +13,19 @@ const dateSchema = new Schema ({
     day: {
         type: String,
         default: new Date().getDay
-    }
+    }, 
+    employees: [hoursSchema]
+})
+
+const hoursSchema = new Schema ({
+   clockedIn: {
+    type: Date, 
+    default: new Date()
+   },
+   clockedOut: {
+    type: Date, 
+    default: new Date()
+   },
 })
 
 module.exports = mongoose.model('Date' , dateSchema)
