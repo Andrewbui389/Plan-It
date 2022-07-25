@@ -5,5 +5,10 @@ module.exports = {
 }
 
 function index(req , res) {
-    res.render('./Admin/index')
+    if(!req.user){
+        console.log('breach')
+        return res.redirect('/')
+    }
+    let data = req.user
+    res.render('./Admin/index' , {data})
 }
