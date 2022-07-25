@@ -6,14 +6,16 @@ module.exports = {
     create: createEmployee
 }
 
-function index(req , res) {
+async function index(req , res) {
     if(!req.user){
         console.log('breach')
         return res.redirect('/')
     }
-    let data = req.user
     if(req.user.Admin !== true)return res.redirect('/staff')
-    res.render('./Admin/index' , {data})
+
+    let employees = await User.find({Admin : false})
+    
+    res.render('./Admin/index' , {employees})
 }
 
 function newEmployee(req , res) {
