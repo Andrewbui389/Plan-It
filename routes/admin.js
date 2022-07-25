@@ -7,7 +7,9 @@ const adminCtr = require('../controllers/admin')
 router.get('/' , adminCtr.index)
 
 // GET to /admin fuctionality is to create a new authorized employee
-// router.get('/new' , adminCtr.new)
+router.get('/new' , adminCtr.new)
+
+router.post('/' , adminCtr.create)
 
 
 module.exports = router

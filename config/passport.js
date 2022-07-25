@@ -24,18 +24,23 @@ passport.use(
       if (user) return cb(null, user);
 
       let check = await User.findOne({ email : profile.emails[0].value })
-      try {
-        if(check)
-        user = await User.create({
-          name: profile.displayName,
-          googleId: profile.id,
-          email: profile.emails[0].value,
-          avatar: profile.photos[0].value
-        })
-        return cb(null , user)
-      } catch (error) {
-        return cb(error)
+
+      try{
+        if(check){
+        check['name'] = profile.displayName,
+        check['googleId'] =  profile.id,
+        check['email'] = profile.emails[0].value,
+        check['avatar'] = profile.photos[0].value
+        check.save()
+        return cb(null,check)
+        } else {
+          throw new Error('No Authorization')
+        }
+      } catch(err){
+        return cb(err)
       }
+
+        
       // We have a new user via OAuth!
       // When using async/await to consume promises,
       // there is no use of .then or .catch, so we
