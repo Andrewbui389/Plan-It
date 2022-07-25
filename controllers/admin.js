@@ -12,3 +12,7 @@ function index(req , res) {
     let data = req.user
     res.render('./Admin/index' , {data})
 }
+
+function new(req , res) {
+
+}
