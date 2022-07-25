@@ -1,7 +1,8 @@
 
 
 module.exports = {
-    index
+    index,
+    new: newEmployee
 }
 
 function index(req , res) {
@@ -10,9 +11,10 @@ function index(req , res) {
         return res.redirect('/')
     }
     let data = req.user
+    if(req.user.Admin !== true)return res.redirect('/testing')
     res.render('./Admin/index' , {data})
 }
 
-function new(req , res) {
+function newEmployee(req , res) {
 
 }

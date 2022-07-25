@@ -22,25 +22,29 @@ passport.use(
       let user = await User.findOne({ googleId: profile.id });
       // Existing user found, so provide it to passport
       if (user) return cb(null, user);
-      // We have a new user via OAuth!
-      // When using async/await to consume promises,
-      // there is no use of .then or .catch, so we
-      // use a try/catch block to handle an error
+
+      let check = await User.findOne({ email : profile.emails[0].value })
       try {
+        if(check)
         user = await User.create({
           name: profile.displayName,
           googleId: profile.id,
           email: profile.emails[0].value,
           avatar: profile.photos[0].value
-        });
-        return cb(null, user);
-      } catch (err) {
-        // An error occured
-        return cb(err);
+        })
+        return cb(null , user)
+      } catch (error) {
+        return cb(error)
       }
+      // We have a new user via OAuth!
+      // When using async/await to consume promises,
+      // there is no use of .then or .catch, so we
+      // use a try/catch block to handle an error
     }
   )
 );
+
+
 
 passport.serializeUser(function(user, cb) {
   // Return a nugget of info that passport
