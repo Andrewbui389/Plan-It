@@ -1,13 +1,8 @@
 <%-include('../partials/header.ejs')%> 
-<div class="container-fluid">
+<div class="container-fluid containerWidth">
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <h1>Admin Dash Board</h1>
-        </div>
-    </div>
-    <div class="row justify-content-around">
-        <div class="col-sm-3 col-med-3 col-lg-5 vw-50">
-            <table class="table table-dark">
+        <div class="col-sm-3 col-med-3 col-lg-5 mainScreen">
+            <table class="table table-dark text-left">
                 <thead>
                     <tr>
                     <th scope="col">Employee</th>
@@ -40,8 +35,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-3 col-med-3 col-lg-5 vw-5">
-            <table class="table table-dark">
+        <div class="col-sm-3 col-med-3 col-lg-5 mainScreen">
+            <table class="table table-dark text-left">
                 <thead>
                     <tr>
                     <th scope="col">Employee</th>
@@ -64,4 +59,5 @@
         </div>
     </div>
 </div>
+
 <%-include('../partials/footer.ejs')%> 
