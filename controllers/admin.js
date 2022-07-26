@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const DayOf = require('../models/date');
 
 module.exports = {
     index,
@@ -12,10 +13,9 @@ async function index(req , res) {
         return res.redirect('/')
     }
     if(req.user.Admin !== true)return res.redirect('/staff')
-
     let employees = await User.find({Admin : false})
-    
-    res.render('./Admin/index' , {employees})
+    let hours = await DayOf.find({createdAt : {$gte : new Date().toLocaleDateString()}})
+    res.render('./Admin/index' , {employees , hours} )
 }
 
 function newEmployee(req , res) {

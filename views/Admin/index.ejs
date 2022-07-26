@@ -34,9 +34,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%employees.forEach(x => {%>
+                    <%hours.forEach(x => {%>
                         <tr>
                             <td> <%= x.name %> </td>
+                            <td> <%= x.clockedIn.toLocaleString() %> </td>
+                            <td> <%= x.clockedOut.toLocaleString() %> </td>
                         </tr>
                     <% }) %>
                 </tbody>
