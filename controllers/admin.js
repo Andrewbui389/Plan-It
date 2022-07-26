@@ -15,7 +15,12 @@ async function index(req , res) {
     if(req.user.Admin !== true)return res.redirect('/staff')
     let employees = await User.find({Admin : false})
     let hours = await DayOf.find({createdAt : {$gte : new Date().toLocaleDateString()}})
-    res.render('./Admin/index' , {employees , hours} )
+    try {
+        return res.render('./Admin/index' , {employees , hours} )
+    } catch (error) {
+        return res.redirect('/')
+    }
+    
 }
 
 function newEmployee(req , res) {
@@ -23,6 +28,7 @@ function newEmployee(req , res) {
 }
 
 function createEmployee(req , res) {
+    req.body.email = trim(req.body.email)
     let employee = new User(req.body)
     employee.save()
     res.redirect('/admin')

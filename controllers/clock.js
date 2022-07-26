@@ -16,8 +16,13 @@ async function clockIn(req , res) {
 
 async function clockOut(req , res) {
     let data = await DayOf.findById(req.params.id)
-    data.clockedOut = new Date()
-    data.totalHours = (((data.clockedOut.getTime() / 60000) - (data.clockedIn.getTime() / 60000)) / 60).toFixed(2)
-    data.save()
-    res.redirect('/staff');
+    try {
+        data.clockedOut = new Date()
+        data.totalHours = (((data.clockedOut.getTime() / 60000) - (data.clockedIn.getTime() / 60000)) / 60).toFixed(2)
+        data.save()
+        return res.redirect('/staff');
+    } catch (error) {
+        return res.redirect('/')
+    }
+    
 };

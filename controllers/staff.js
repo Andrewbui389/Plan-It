@@ -10,7 +10,13 @@ async function index(req , res) {
         console.log('breach');
         return res.redirect('/');
     };
+    if(req.user.Admin === true) return res.redirect('/admin')
     let data = await DayOf.findOne({clockedOut: null , name : req.user.name})
-    res.render('./Staff/index' , {data});
+    try {
+        return res.render('./Staff/index' , {data});
+    } catch (error) {
+        return res.redirect('/')
+    }
+    
 };
 
