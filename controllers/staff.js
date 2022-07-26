@@ -10,7 +10,7 @@ async function index(req , res) {
         console.log('breach');
         return res.redirect('/');
     };
-    let data = await DayOf.findOne({clockedOut: null})
+    let data = await DayOf.findOne({clockedOut: null , name : req.user.name})
     res.render('./Staff/index' , {data});
 };
 
