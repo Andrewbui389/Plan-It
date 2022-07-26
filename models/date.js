@@ -1,31 +1,30 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const dateSchema = new Schema ({
-    year: {
-        type: String,
-        default: new Date().getFullYear
-    },
-    month: {
-        type: String,
-        default: new Date().getMonth
-    },
-    day: {
-        type: String,
-        default: new Date().getDay
-    }, 
-    employees: [hoursSchema]
-})
+
 
 const hoursSchema = new Schema ({
-   clockedIn: {
-    type: Date, 
-    default: new Date()
-   },
-   clockedOut: {
-    type: Date, 
-    default: new Date()
-   },
-})
+    user: {type:Schema.Types.ObjectId, ref:'User'},
+    name: String,
+    clockedIn: {
+     type: Date, 
+     default: new Date()
+    },
+    clockedOut: {
+     type: Date, 
+     default: null
+    },
+    totalHours: {
+        type:Number,
+        default:null
+    },
+    date: {
+        type: Date,
+        default: new Date().toLocaleDateString()
+    }},
+    {
+    timestamps:true 
+    }  
+ )
 
-module.exports = mongoose.model('Date' , dateSchema)
+module.exports = mongoose.model('WorkDay' , hoursSchema)
