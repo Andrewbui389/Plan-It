@@ -1,11 +1,11 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const session = require('express-session');
-const passport = require('passport');
-const methodOverride = require('method-override');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let session = require('express-session');
+let passport = require('passport');
+let methodOverride = require('method-override');
 
 // Load the secrets in the .env module
 require('dotenv').config();
@@ -14,13 +14,13 @@ require('./config/database');
 // Configue passport
 require('./config/passport');
 
-const indexRouter = require('./routes/index');
-const adminRouter = require('./routes/admin');
-const staffRouter = require('./routes/staff');
-const clockRouter = require('./routes/clock');
+let indexRouter = require('./routes/index');
+let adminRouter = require('./routes/admin');
+let staffRouter = require('./routes/staff');
+let clockRouter = require('./routes/clock');
 
 
-const app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -52,7 +52,7 @@ app.use(function(req, res, next) {
 });
 
 // Middleware to protect routes
-const isLoggedIn = require('./config/auth');
+let isLoggedIn = require('./config/auth');
 
 app.use('/', indexRouter);
 app.use('/admin', isLoggedIn, adminRouter);
