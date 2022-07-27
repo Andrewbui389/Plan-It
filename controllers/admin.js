@@ -6,7 +6,8 @@ module.exports = {
     new: newEmployee,
     create: createEmployee,
     show,
-    delete: deleteUser
+    delete: deleteUser,
+    editHours
 }
 
 async function index(req , res) {
@@ -73,6 +74,10 @@ async function createEmployee(req , res) {
         }
     } catch (error) {
         return res.redirect('/')
-    }
-    
+    }   
+}
+
+async function editHours(req , res){
+    console.log('here')
+    return res.redirect('/admin')
 }

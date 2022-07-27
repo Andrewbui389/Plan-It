@@ -9,6 +9,9 @@ router.get('/' , adminCtr.index)
 // GET to /admin fuctionality is to get to a form for creating a new authorized employee
 router.get('/new' , adminCtr.new)
 
+// PUT /admin to actually create a a new employee in the database
+router.post('/:id/editHours' , adminCtr.editHours)
+
 //GET to /admin/:id to show a specific employee and their information 
 router.get('/:id' , adminCtr.show)
 
