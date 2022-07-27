@@ -68,9 +68,7 @@
                         <tr>
                             <td> <%= x.name %> </td>
                             <td> <%= x.clockedIn.toLocaleString() %> </td>
-                            <%if(x.clockedOut) { %>
-                            <td> <%= x.clockedOut.toLocaleString() %> </td>
-                            <% } %>
+                            <td> <%= x.clockedOut ? x.clockedOut.toLocaleString() : ''%> </td>
                         </tr>
                     <% }) %>
                 </tbody>

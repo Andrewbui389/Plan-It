@@ -27,7 +27,9 @@
                 <thead>
                     <tr>
                     <th scope="col">Employee</th>
-                    <th scope="col">Days Worked</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Clocked In</th>
+                    <th scope="col">Clocked Out</th>
                     <th scope="col">Hours</th>
                     </tr>
                 </thead>
@@ -36,6 +38,8 @@
                         <tr>
                             <td><%= x.name %></td>
                             <td><%= x.createdAt.toLocaleDateString() %></td>
+                            <td><%= x.clockedIn.toLocaleString() %></td>
+                            <td><%= x.clockedOut ? x.clockedOut.toLocaleString() : '' %></td>
                             <td><%= x.totalHours %></td>
                         </tr>
                     <% }) %>

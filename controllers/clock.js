@@ -11,7 +11,11 @@ async function clockIn(req , res) {
     req.body['name'] = req.user.name
     let setDay = await new DayOf(req.body)
     setDay.save()
-    res.redirect('/staff');
+    try {
+        return res.redirect('/staff');
+    } catch (error) {
+        return res.redirect('/');
+    }
 };
 
 async function clockOut(req , res) {
