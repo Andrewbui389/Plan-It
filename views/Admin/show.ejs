@@ -38,6 +38,7 @@
                     <th scope="col">Employee</th>
                     <th scope="col">Days Worked</th>
                     <th scope="col">Hours</th>
+                    <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,7 @@
                             <td><%= x.name %></td>
                             <td><%= x.createdAt.toLocaleDateString() %></td>
                             <td><%= x.totalHours %></td>
+                            <td><a href="/admin/<%= x._id %>/editHours" class="btn btn-outline-success">Edit Hours</a></td>
                         </tr>
                     <% }) %>
                 </tbody>

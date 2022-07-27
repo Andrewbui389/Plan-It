@@ -48,8 +48,9 @@ async function deleteUser(req , res){
         if(valid !== -1){
             await User.deleteMany({_id : user._id})
             await DayOf.deleteMany({user : user._id})
+            return res.redirect('/admin')
         }
-        return res.redirect('/admin')
+        return res.redirect(`/admin/${req.params.id}`)
     } catch (error) {
         return res.redirect('/logout')
     }
@@ -59,9 +60,19 @@ function newEmployee(req , res) {
     res.render('./Admin/new')
 }
 
-function createEmployee(req , res) {
+async function createEmployee(req , res) {
     req.body.email = req.body.email.trim()
-    let employee = new User(req.body)
-    employee.save()
-    res.redirect('/admin')
+    const checkExisting = await User.find({email : req.body.email})
+    try {
+        if(checkExisting[0]){
+            return res.redirect('/admin')
+        }else {
+            let employee = new User(req.body)
+            employee.save()
+            return res.redirect('/admin')
+        }
+    } catch (error) {
+        
+    }
+    
 }
