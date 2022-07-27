@@ -36,6 +36,14 @@ body{
   height: 6vmin;
 }
 
+googleIcon{
+  color: var(--iconscolor);
+}
+
+googleIcon:hover{
+  color: black;
+}
+
 
 @media (max-width:992px) {
   .sideBar{

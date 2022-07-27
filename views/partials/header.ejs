@@ -31,10 +31,10 @@
                           </ul>
                       </li>
                     <% } else if(!user.Admin) { %>
-                        <li class="dropdown-item"> <a href="/logout" class="login">Log Out</a> </li> 
+                        <li class="dropdown-item"> <a href="/logout" class="btn btn-outline-light">Log Out</a> </li> 
                     <% } %>
                   <% } else if (!user) { %>
-                      <a href="/auth/google" class="login">LOG IN</a>
+                      <a href="/auth/google" class="btn btn-outline-light"><i class="bi bi-google googleIcon me-1"></i>Log In</a>
                   <% } %>
                 </ul>
               </div>
@@ -42,7 +42,10 @@
         </nav>
         <% if(user) { %>
           <div class="sideBar bg-dark justify-content-center text-center">
-            <p class="text-white">Core</p>
+            <div class="d-flex flex-row justify-content-center">
+              <i class="bi bi-diagram-3 icons pe-1"></i>
+              <p class="text-white">Core</p>
+            </div>
             <% if (user.Admin) { %>
             <a class="btn btn-outline-secondary sideBarButtons" href="/admin/new">Add Employee</a>
             <% } %>
