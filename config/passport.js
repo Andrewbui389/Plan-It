@@ -8,7 +8,8 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: process.env.GOOGLE_CALLBACK
+      callbackURL: process.env.GOOGLE_CALLBACK,
+      scope: ['profile', 'email'],
     },
     // The verify callback function
     // Marking a function as an async function
@@ -40,11 +41,6 @@ passport.use(
         return cb(err)
       }
 
-        
-      // We have a new user via OAuth!
-      // When using async/await to consume promises,
-      // there is no use of .then or .catch, so we
-      // use a try/catch block to handle an error
     }
   )
 );
