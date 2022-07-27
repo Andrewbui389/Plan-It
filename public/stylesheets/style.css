@@ -64,6 +64,15 @@ body{
   justify-content: center;
   align-items: center;
 }
+.anchor {
+  text-decoration: none;
+  color: white;
+}
+
+.anchor:hover {
+  text-decoration: none;
+  color: #EAD2AC
+}
 
 @media (max-width:992px) {
   .mainScreen {

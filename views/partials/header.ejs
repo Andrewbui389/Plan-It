@@ -49,7 +49,10 @@
               <p class="text-white">Core</p>
             </div>
             <% if (user.Admin) { %>
-             <a class="btn btn-outline-secondary sideBarButtons text-wrap" href="/admin/new">Add Employee</a> 
+              <div class="d-flex justify-content-center">
+              <i class="bi bi-person-plus-fill icons"></i>
+              <a class="sideBarButtons text-wrap anchor " href="/admin/new">Add Employee</a> 
+              </div>
             <% } %>
           </div>
         <% } %>

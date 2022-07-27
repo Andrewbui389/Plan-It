@@ -41,11 +41,13 @@ async function show(req , res) {
 }
 
 async function deleteUser(req , res){
-    let user = await User.findById(req.params.id)
+    const user = await User.findById(req.params.id)
+    req.body.confirm = req.body.confirm.trim().toLowerCase()
+    const valid = req.body.confirm.search('confirm')
     try {
-        if(req.body.confirm === 'confirm'){
-        let wipeUser = await User.deleteMany({_id : user._id})
-        let wipeUserHours = await DayOf.deleteMany({user : user._id})
+        if(valid !== -1){
+            await User.deleteMany({_id : user._id})
+            await DayOf.deleteMany({user : user._id})
         }
         return res.redirect('/admin')
     } catch (error) {
