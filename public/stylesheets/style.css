@@ -1,7 +1,7 @@
 :root {
   --iconscolor: white;
-  --sidebarWidth: 8vw;
-  --sidebarHeight: 100vh;
+  --sidebarWidth: 9vw;
+  --sidebarHeight: 95vh;
   --mainWidth: 50vw;
 }
 
@@ -19,6 +19,7 @@ body{
   position: absolute;
   width: var(--sidebarWidth);
   height: var(--sidebarHeight);
+  overflow: hidden;
   left: 0;
 }
 
@@ -43,7 +44,6 @@ googleIcon{
 googleIcon:hover{
   color: black;
 }
-
 
 @media (max-width:992px) {
   .sideBar{
