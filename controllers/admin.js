@@ -72,7 +72,7 @@ async function createEmployee(req , res) {
             return res.redirect('/admin')
         }
     } catch (error) {
-        
+        return res.redirect('/')
     }
     
 }

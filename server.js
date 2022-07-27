@@ -51,11 +51,13 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Middleware to protect routes
+const isLoggedIn = require('./config/auth');
 
 app.use('/', indexRouter);
-app.use('/admin', adminRouter);
-app.use('/staff', staffRouter);
-app.use('/clock', clockRouter);
+app.use('/admin', isLoggedIn, adminRouter);
+app.use('/staff', isLoggedIn, staffRouter);
+app.use('/clock', isLoggedIn, clockRouter);
 
 
 
