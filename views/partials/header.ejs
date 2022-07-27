@@ -20,16 +20,15 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav align-items-center ">
+                <li class="nav-link text-white"> <%= user.name %></li> 
+                <ul class="navbar-nav">
                   <%if (user) { %>
                     <% if(user.Admin) {%>
-                      <li class="nav-item text-white"> <%= user.name %> </li> 
-                      <li class="nav-item dropdown align-items-center justify-content-center">
-                          <a class="nav-link dropdown-toggle icons" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person icons"></i></a>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li> <a class="dropdown-item" href="/admin/new">Add Employee</a> </li>
-                            <li> <a class="dropdown-item" href="/logout">Log Out</a> </li>
-                          </ul>
+                        <a class="nav-link dropdown-toggle icons" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person icons"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li> <a class="dropdown-item" href="/admin/new">Add Employee</a> </li>
+                        <li> <a class="dropdown-item" href="/logout">Log Out</a> </li>
+                      </ul>
                       </li>
                     <% } else if(!user.Admin) { %>
                         <li class="dropdown-item"> <a href="/logout" class="btn btn-outline-light">Log Out</a> </li> 
@@ -48,7 +47,7 @@
               <p class="text-white">Core</p>
             </div>
             <% if (user.Admin) { %>
-            <a class="btn btn-outline-secondary sideBarButtons" href="/admin/new">Add Employee</a>
+             <a class="btn btn-outline-secondary sideBarButtons" href="/admin/new">Add Employee</a> 
             <% } %>
           </div>
         <% } %>
