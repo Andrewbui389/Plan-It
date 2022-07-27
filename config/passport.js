@@ -49,8 +49,6 @@ passport.use(
   )
 );
 
-
-
 passport.serializeUser(function(user, cb) {
   // Return a nugget of info that passport
   // will give us each time a request is made by
