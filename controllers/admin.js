@@ -4,7 +4,9 @@ const DayOf = require('../models/date');
 module.exports = {
     index,
     new: newEmployee,
-    create: createEmployee
+    create: createEmployee,
+    show,
+    delete: deleteUser
 }
 
 async function index(req , res) {
@@ -20,7 +22,35 @@ async function index(req , res) {
     } catch (error) {
         return res.redirect('/')
     }
-    
+}
+
+async function show(req , res) {
+    if(!req.user){
+        console.log('breach')
+        return res.redirect('/')
+    }
+    const specficUser = await User.findById(req.params.id)
+    const date = new Date()
+    const templateCurrMonth = `${date.getMonth() + 1}/1/${date.getFullYear()}`
+    const employeeData = await DayOf.find({createdAt : {$gte : templateCurrMonth} , user : specficUser._id})
+    try {
+        return res.render('./Admin/show' , {specficUser , employeeData})
+    } catch (err) {
+        return res.redirect('/admin')
+    }
+}
+
+async function deleteUser(req , res){
+    let user = await User.findById(req.params.id)
+    try {
+        if(req.body.confirm === 'confirm'){
+        let wipeUser = await User.deleteMany({_id : user._id})
+        let wipeUserHours = await DayOf.deleteMany({user : user._id})
+        }
+        return res.redirect('/admin')
+    } catch (error) {
+        return res.redirect('/logout')
+    }
 }
 
 function newEmployee(req , res) {
@@ -28,7 +58,7 @@ function newEmployee(req , res) {
 }
 
 function createEmployee(req , res) {
-    req.body.email = trim(req.body.email)
+    req.body.email = req.body.email.trim()
     let employee = new User(req.body)
     employee.save()
     res.redirect('/admin')

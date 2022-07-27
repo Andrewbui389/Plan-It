@@ -30,7 +30,8 @@ body{
 
 .sideBarButtons {
   width: 12vmin;
-  height: 8vmin;
+  height: 7vmin;
+  overflow: hidden;
 }
 
 .googleIcon{
@@ -44,6 +45,9 @@ body{
 .mainHeight {
   height: 30vmin;
 }
+.mainHeightTwo {
+  height: 25vmin;
+}
 
 .tableSet {
   overflow-y: scroll;
@@ -53,6 +57,12 @@ body{
 .employeeCardLarge {
   max-width: 15rem; 
   max-height: 10rem;
+}
+
+.formcss {
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width:992px) {
@@ -68,5 +78,8 @@ body{
   .employeeCardLarge {
     width: 100vw;
     height: 50vh;
+  }
+  .mainHeightTwo {
+    height: 45vmin;
   }
 }

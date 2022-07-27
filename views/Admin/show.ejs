@@ -1,0 +1,56 @@
+<%-include('../partials/header.ejs')%> 
+<div class="container">
+    <div class="row justify-content-center formcss">
+        <div class="col-lg-6 col-sm-6 card">
+            <div class="card-body">
+              <h5 class="card-title">Name: <%=specficUser.name%></h5>
+              <p class="card-text">Email: <%=specficUser.email%></p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Deactivate User
+              </button>
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Deleting a user is going to wipe them completely from the database type <strong>confirm</strong> and submit
+                        <form class="col-12" method="POST" action="/admin/<%=specficUser._id%>?_method=DELETE">
+                            <input type="text" name="confirm" class="form-control mt-2">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Confirm</button>
+                            </div>
+                        </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mainHeight justify-content-center mt-1">
+        <div class="col-sm-2 col-med-6 col-lg-6 mainScreen tableSet">
+            <table class="table table-dark text-left">
+                <thead>
+                    <tr>
+                    <th scope="col">Employee</th>
+                    <th scope="col">Days Worked</th>
+                    <th scope="col">Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% employeeData.forEach(x => { %>
+                        <tr>
+                            <td><%= x.name %></td>
+                            <td><%= x.createdAt.toLocaleDateString() %></td>
+                            <td><%= x.totalHours %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%-include('../partials/footer.ejs')%> 

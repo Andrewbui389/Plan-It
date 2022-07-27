@@ -3,14 +3,14 @@
     <div class="row ms-1">
         <div class="display-6 ">Staff Members</div>
     </div>
-    <div class="row mainHeight mainScreen overflow-auto">
+    <div class="row mainHeightTwo mainScreen overflow-auto">
         <div class="d-flex col-12 flex-wrap">
             <% employees.forEach((x) => { %>
             <div class="card border-secondary m-2 employeeCardLarge">
                 <div class="card-body text-secondary">
                 <h5 class="card-title"><%= x.name %></h5>
                 <p class="card-text">Started: <%= x.createdAt.toLocaleDateString()%> </p>
-                <a class="btn btn-outline-success" href="#">Additional Info</a>
+                <a class="btn btn-outline-success" href="/admin/<%=x._id%>">Additional Info</a>
                 </div>
             </div>
             <% }) %>
