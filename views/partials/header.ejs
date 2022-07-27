@@ -20,7 +20,9 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <% if(user) {%>
                 <li class="nav-link text-white"> <%= user.name %></li> 
+                <% } %>
                 <ul class="navbar-nav">
                   <%if (user) { %>
                     <% if(user.Admin) {%>
@@ -31,7 +33,7 @@
                       </ul>
                       </li>
                     <% } else if(!user.Admin) { %>
-                        <li class="dropdown-item"> <a href="/logout" class="btn btn-outline-light">Log Out</a> </li> 
+                        <li class="dropdown-item ps-1"> <a href="/logout" class="btn btn-outline-light">Log Out</a> </li> 
                     <% } %>
                   <% } else if (!user) { %>
                       <a href="/auth/google" class="btn btn-outline-light"><i class="bi bi-google googleIcon me-1"></i>Log In</a>

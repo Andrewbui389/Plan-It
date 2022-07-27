@@ -23,10 +23,6 @@ body{
   left: 0;
 }
 
-.mainScreen {
-  width: var(--mainWidth);
-}
-
 .containerWidth {
   padding: 10px;
   width: 80vw;
@@ -37,25 +33,40 @@ body{
   height: 8vmin;
 }
 
-googleIcon{
+.googleIcon{
   color: var(--iconscolor);
 }
 
-googleIcon:hover{
+.googleIcon:hover{
   color: black;
 }
 
-@media (max-width:992px) {
-  .sideBar{
-    display: none;
-  }
+.mainHeight {
+  height: 30vmin;
+}
+
+.tableSet {
+  overflow-y: scroll;
+  height: 150px;
+}
+
+.employeeCardLarge {
+  max-width: 15rem; 
+  max-height: 10rem;
 }
 
 @media (max-width:992px) {
   .mainScreen {
-    width: 100vw;
+    width: 99vw;
   }
   .containerWidth {
     width: 99vw;
+  }
+  .sideBar{
+    display: none;
+  }
+  .employeeCardLarge {
+    width: 100vw;
+    height: 50vh;
   }
 }
