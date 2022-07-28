@@ -54,9 +54,10 @@ app.use(function(req, res, next) {
 
 // Middleware to protect routes
 let isLoggedIn = require('./config/auth');
+let adminCheck = require('./config/adminSecurity')
 
 app.use('/', indexRouter);
-app.use('/admin', isLoggedIn, adminRouter);
+app.use('/admin', isLoggedIn, adminCheck ,adminRouter);
 app.use('/staff', isLoggedIn, staffRouter);
 app.use('/clock', isLoggedIn, clockRouter);
 app.use('/hours', isLoggedIn, hoursRouter);

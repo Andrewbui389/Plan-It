@@ -11,10 +11,6 @@ module.exports = {
 }
 
 async function index(req , res) {
-    if(!req.user){
-        console.log('breach')
-        return res.redirect('/')
-    }
     if(req.user.Admin !== true)return res.redirect('/staff')
     let employees = await User.find({Admin : false})
     let hours = await DayOf.find({createdAt : {$gte : new Date().toLocaleDateString()}})
@@ -26,10 +22,6 @@ async function index(req , res) {
 }
 
 async function show(req , res) {
-    if(!req.user){
-        console.log('breach')
-        return res.redirect('/')
-    }
     const specficUser = await User.findById(req.params.id)
     const date = new Date()
     const templateCurrMonth = `${date.getMonth() + 1}/1/${date.getFullYear()}`
@@ -78,6 +70,5 @@ async function createEmployee(req , res) {
 }
 
 async function editHours(req , res){
-    console.log('here')
     return res.redirect('/admin')
 }

@@ -4,7 +4,6 @@ const passport = require('passport');
 
 // Don't want a welcome/home page in this app
 router.get('/', function(req, res, next) {
-  console.log(process.env);
   res.render('index');
 });
 
