@@ -15,8 +15,7 @@ router.get('/auth/google', passport.authenticate(
     // Optionally force the user to pick account every time
     prompt: 'select_account'
   }
-));
-
+))
 // Google OAuth callback route
 router.get('/oauth2callback', passport.authenticate(
   'google',
