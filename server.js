@@ -60,7 +60,7 @@ app.use('/', indexRouter);
 app.use('/admin', isLoggedIn, adminCheck ,adminRouter);
 app.use('/staff', isLoggedIn, staffRouter);
 app.use('/clock', isLoggedIn, clockRouter);
-app.use('/hours', isLoggedIn, hoursRouter);
+app.use('/hours', isLoggedIn, adminCheck , hoursRouter);
 
 
 
