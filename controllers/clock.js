@@ -9,9 +9,14 @@ module.exports = {
 async function clockIn(req , res) {
     req.body['user'] = req.user._id
     req.body['name'] = req.user.name
-    let setDay = await new DayOf(req.body)
-    setDay.save()
+    let checkExist = DayOf.find({clockedOut : null})
+    
+    
     try {
+        if(checkExist){
+        let setDay = await new DayOf(req.body)
+        setDay.save()
+        }
         return res.redirect('/staff');
     } catch (error) {
         return res.redirect('/');
