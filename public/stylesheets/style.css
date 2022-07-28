@@ -119,7 +119,7 @@ body{
     height: 45vmin;
   }
   body{
-    overflow: scroll;
+    overflow: auto;
   }
   .containerWidthSched {
     margin-left: 0;
