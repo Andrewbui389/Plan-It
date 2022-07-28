@@ -9,8 +9,8 @@ module.exports = {
 async function clockIn(req , res) {
     req.body['user'] = req.user._id
     req.body['name'] = req.user.name
-    let checkExist = await DayOf.find({clockedOut : null})
-    
+    let checkExist = await DayOf.find({user: req.user._id , clockedOut : null})
+    console.log(checkExist)
     try {
         if(!checkExist[0]){
         let setDay = await new DayOf(req.body)
