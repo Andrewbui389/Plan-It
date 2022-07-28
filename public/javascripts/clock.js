@@ -1,4 +1,5 @@
 let time = document.querySelector('#time')
+let staffCheck = document.querySelector('#staff')
 
 function getCurrentTime() { 
     let current = new Date().toLocaleString()
@@ -9,6 +10,9 @@ function getCurrentTime() {
 if(time){
     window.setInterval(getCurrentTime , 1)
 }
+
+
+
 
 
 

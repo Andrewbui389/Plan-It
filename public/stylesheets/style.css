@@ -84,6 +84,23 @@ body{
   color: #EAD2AC
 }
 
+#homePage{
+  animation-name: loadin;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loadin{ 
+  from{
+      opacity: 0;
+      transform: translateX(0);
+  }
+  to{
+      opacity: 1;
+      transform: translateX(15px)
+  }
+}
+
 @media (max-width:992px) {
   .mainScreen {
     width: 99vw;
