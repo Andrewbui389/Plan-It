@@ -8,7 +8,6 @@ const hoursSchema = new Schema ({
     name: String,
     clockedIn: {
      type: Date, 
-     default: new Date()
     },
     clockedOut: {
      type: Date, 
