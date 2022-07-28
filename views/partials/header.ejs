@@ -52,25 +52,24 @@
             </div>
             <% if (user.Admin) { %>
               <div class="d-flex justify-content-center align-items-center">
-              <i class="bi bi-person-plus-fill icons"></i>
-              <a class="sideBarButtons text-wrap anchor " href="/admin/new">Add Employee</a> 
+              <i class="bi bi-person-plus-fill icons pe-2"></i>
+              <a class="sideBarButtons text-wrap anchor d-flex align-items-center" href="/admin/new">Add Employee</a> 
               </div>
               <div class="d-flex justify-content-center align-items-center">
-                <i class="bi bi-clock icons"></i>
-                <a class="sideBarButtons text-wrap anchor " href="#">Add Schedule</a> 
+                <i class="bi bi-clock icons pe-2"></i>
+                <a class="sideBarButtons text-wrap anchor d-flex align-items-center" href="#">Add Schedule</a> 
               </div>
               <div class="d-flex justify-content-center align-items-center">
-                <i class="bi bi-calendar icons"></i>
-                <a class="sideBarButtons text-wrap anchor " href="#">View Schdules</a> 
+                <i class="bi bi-calendar icons pe-2"></i>
+                <a class="sideBarButtons text-wrap anchor d-flex align-items-center" href="#">View Schedules</a> 
               </div>
             <% } else if(!user.Admin) { %>
               <div class="d-flex justify-content-center align-items-center">
                 <i class="bi bi-calendar icons"></i>
-                <a class="sideBarButtons text-wrap anchor " href="#">View My Schdule</a> 
+                <a class="sideBarButtons text-wrap anchor d-flex align-items-center" href="#">View My Schedule</a> 
               </div>
             <% } %>
           </div>
-            
         <% } %>
 
         
