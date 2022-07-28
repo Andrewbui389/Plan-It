@@ -18,6 +18,7 @@ let indexRouter = require('./routes/index');
 let adminRouter = require('./routes/admin');
 let staffRouter = require('./routes/staff');
 let clockRouter = require('./routes/clock');
+let hoursRouter = require('./routes/hoursEdit');
 
 
 let app = express();
@@ -58,6 +59,7 @@ app.use('/', indexRouter);
 app.use('/admin', isLoggedIn, adminRouter);
 app.use('/staff', isLoggedIn, staffRouter);
 app.use('/clock', isLoggedIn, clockRouter);
+app.use('/hours', isLoggedIn, hoursRouter);
 
 
 
