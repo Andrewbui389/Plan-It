@@ -1,7 +1,7 @@
 <%-include('../partials/header.ejs')%> 
 <div class="container">
     <div class="row justify-content-center formcss">
-        <form class="col-lg-6 col-sm-8 border rounded p-5" method="POST" action="/schedule/create">
+        <form class="col-lg-6 col-sm-8 border rounded p-5" method="POST" action="/schedule">
             <div class="row text-center">
                 <h3>Creating new schedule</h3>
             </div>
@@ -12,11 +12,11 @@
                     <% }) %>
                 </select>
                 <label class="mt-2">Day</label>
-                <input autocomplete="off"  type="date" name="date" class="form-control mt-2" aria-describedby="emailHelp" placeholder="Enter email">
+                <input autocomplete="off"  type="date" name="date" class="form-control mt-2" required>
                 <label class="mt-2">Start time</label>
-                <input autocomplete="off"  type="time" name="start" class="form-control mt-2" aria-describedby="emailHelp" placeholder="Enter email">
+                <input autocomplete="off"  type="time" name="start" class="form-control mt-2" required>
                 <label class="mt-2">End time</label>
-                <input autocomplete="off"  type="time" name="end" class="form-control mt-2" aria-describedby="emailHelp" placeholder="Enter email">
+                <input autocomplete="off"  type="time" name="end" class="form-control mt-2" required>
             </div>
             <button type="submit" class="btn btn-outline-success mt-2">Submit</button>
         </form>

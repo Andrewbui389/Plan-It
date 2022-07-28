@@ -27,6 +27,16 @@ body{
   width: 80vw;
 }
 
+.containerWidthSched {
+  margin-left: 200px;
+  padding: 10px;
+  width: 85vw;
+}
+
+.schedHeight {
+  height: 80vmin;
+}
+
 .sideBarButtons {
   width: 12vmin;
   height: 7vmin;
@@ -93,4 +103,14 @@ body{
   body{
     overflow: scroll;
   }
+  .containerWidthSched {
+    margin-left: 0;
+    padding: 10px;
+    width: 99vw;
+  }
+
+  .schedHeight {
+    height: 100vh;
+  }
+  
 }

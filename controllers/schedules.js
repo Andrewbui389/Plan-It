@@ -4,7 +4,8 @@ const Schedule = require('../models/schedule')
 
 module.exports = {
     show,
-    create
+    create,
+    index
 };
 
 async function show(req , res) {
@@ -13,7 +14,24 @@ async function show(req , res) {
 };
 
 async function create(req , res) {
-    console.log(req.body)
-    
+    let user = await User.findById(req.body.user)
+    let schedule = new Schedule()
+
+    try {
+        schedule.user = user._id
+        schedule.name = user.name
+        schedule.day = new Date(req.body.date)
+        schedule.start = new Date(`${req.body.date} ${req.body.start}`)
+        schedule.end = new Date(`${req.body.date} ${req.body.end}`)
+        schedule.save()
+        return res.redirect('/admin')
+    } catch (error) {
+        return res.redirect('/')
+    }
 };
+
+async function index(req , res){
+    let schedules = await Schedule.find()
+    res.render('./schedules' , {schedules})
+}
 
