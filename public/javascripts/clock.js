@@ -5,7 +5,11 @@ function getCurrentTime() {
     time.textContent = current
 }
 
-window.setInterval(getCurrentTime , 1)
+
+if(time){
+    window.setInterval(getCurrentTime , 1)
+}
+
 
 
 
