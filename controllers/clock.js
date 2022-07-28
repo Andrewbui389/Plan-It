@@ -13,7 +13,7 @@ async function clockIn(req , res) {
     
     
     try {
-        if(!checkExist){
+        if(checkExist){
         let setDay = await new DayOf(req.body)
         setDay.save()
         }
