@@ -9,7 +9,7 @@
             <div class="card border-secondary m-2 employeeCardLarge">
                 <div class="card-body text-secondary">
                 <h5 class="card-title"><%= x.name %></h5>
-                <p class="card-text">Started: <%= x.createdAt.toLocaleDateString()%> </p>
+                <p class="card-text">Started: <%= x.createdAt.toLocaleString()%> </p>
                 <a class="btn btn-outline-success" href="/admin/<%=x._id%>">Additional Info</a>
                 </div>
             </div>
