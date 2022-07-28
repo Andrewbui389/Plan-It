@@ -11,9 +11,8 @@ async function clockIn(req , res) {
     req.body['name'] = req.user.name
     let checkExist = await DayOf.find({clockedOut : null})
     
-    
     try {
-        if(!checkExist){
+        if(!checkExist[0]){
         let setDay = await new DayOf(req.body)
         setDay.save()
         }
