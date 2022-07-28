@@ -6,8 +6,7 @@
 }
 
 body{
-  overscroll-behavior-y: none;
-  overscroll-behavior-x: none;
+  overflow: hidden;
   box-sizing: content-box;
 }
 
@@ -90,5 +89,8 @@ body{
   }
   .mainHeightTwo {
     height: 45vmin;
+  }
+  body{
+    overflow: scroll;
   }
 }
