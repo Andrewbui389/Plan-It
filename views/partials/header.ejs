@@ -29,6 +29,8 @@
                         <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person icons"></i></a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                           <li> <a class="dropdown-item" href="/admin/new">Add Employee</a> </li>
+                          <li> <a class="dropdown-item" href="#">Add Schdule</a> </li>
+                          <li> <a class="dropdown-item" href="#">View Schdules</a> </li>
                           <li> <a class="dropdown-item" href="/logout">Log Out</a> </li>
                         </ul>
                     <% } else if(!user.Admin) { %>
@@ -54,14 +56,20 @@
               </div>
               <div class="d-flex justify-content-center align-items-center">
                 <i class="bi bi-clock icons"></i>
-                <a class="sideBarButtons text-wrap anchor " href="/admin/new">Add Schedule</a> 
+                <a class="sideBarButtons text-wrap anchor " href="#">Add Schedule</a> 
               </div>
               <div class="d-flex justify-content-center align-items-center">
                 <i class="bi bi-calendar icons"></i>
-                <a class="sideBarButtons text-wrap anchor " href="/admin/new">View Schdules</a> 
+                <a class="sideBarButtons text-wrap anchor " href="#">View Schdules</a> 
+              </div>
+            <% } else if(!user.Admin) { %>
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="bi bi-calendar icons"></i>
+                <a class="sideBarButtons text-wrap anchor " href="#">View My Schdule</a> 
               </div>
             <% } %>
           </div>
+            
         <% } %>
 
         

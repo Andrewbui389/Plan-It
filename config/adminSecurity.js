@@ -4,4 +4,4 @@ module.exports = function adminCheck(req, res, next) {
     }else if(!req.user.Admin){
         res.redirect('/staff')
     }
-  };
+};
