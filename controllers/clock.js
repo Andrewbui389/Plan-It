@@ -9,7 +9,7 @@ module.exports = {
 async function clockIn(req , res) {
     req.body['user'] = req.user._id
     req.body['name'] = req.user.name
-    let checkExist = DayOf.find({clockedOut : null})
+    let checkExist = await DayOf.find({clockedOut : null})
     
     
     try {
