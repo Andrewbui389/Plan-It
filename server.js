@@ -19,6 +19,7 @@ let adminRouter = require('./routes/admin');
 let staffRouter = require('./routes/staff');
 let clockRouter = require('./routes/clock');
 let hoursRouter = require('./routes/hoursEdit');
+let scheduleRouter = require('./routes/schedule');
 
 
 let app = express();
@@ -61,6 +62,7 @@ app.use('/admin', isLoggedIn, adminCheck ,adminRouter);
 app.use('/staff', isLoggedIn, staffRouter);
 app.use('/clock', isLoggedIn, clockRouter);
 app.use('/hours', isLoggedIn, adminCheck , hoursRouter);
+app.use('/schedule', isLoggedIn, adminCheck , scheduleRouter);
 
 
 
