@@ -97,7 +97,7 @@ body{
   }
   to{
       opacity: 1;
-      transform: translateX(15px)
+      transform: translateX(5px)
   }
 }
 
@@ -118,9 +118,12 @@ body{
   .mainHeightTwo {
     height: 45vmin;
   }
+
   body{
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
+
   .containerWidthSched {
     margin-left: 0;
     padding: 10px;
