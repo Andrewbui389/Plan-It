@@ -65,8 +65,6 @@ app.use('/hours', isLoggedIn, adminCheck , hoursRouter);
 app.use('/schedule', isLoggedIn, scheduleRouter);
 
 
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
