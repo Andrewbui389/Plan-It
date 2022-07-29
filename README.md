@@ -21,7 +21,7 @@ for logging in and out.
 
 ## Images 
 
-![Image of Home Screen Admin](https://i.imgur.com/qXT25Uf.png =250x250)
+![Image of Home Screen Admin](https://i.imgur.com/qXT25Uf.png)
 
 ![Image of Mobile Screen Admin](https://i.imgur.com/xKyviO4.png)
 
