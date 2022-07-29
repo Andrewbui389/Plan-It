@@ -13,9 +13,9 @@ for logging in and out.
 [![JavaScript Icon](https://i.imgur.com/8dlunYx.png)](https://www.javascript.com/)
 [![HTML Icon](https://i.imgur.com/a28wdJt.png)](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
 [![CSS Icon](https://i.imgur.com/xxxjbkz.png)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![Boostrap Icon](https://i.imgur.com/PyVDgn2.png)](https://getbootstrap.com/)
-[![MongoDB](https://i.imgur.com/ES0OwZ8.png)](https://www.mongodb.com/)
-[![Node](https://i.imgur.com/9133SUs.png)](https://nodejs.org/en/)
+[![Boostrap Icon](https://i.imgur.com/GwevSVe.png)](https://getbootstrap.com/)
+[![MongoDB](https://i.imgur.com/JLEayZl.png)](https://www.mongodb.com/)
+[![Node](https://i.imgur.com/cGMTx2B.png)](https://nodejs.org/en/)
 
 ------------
 
