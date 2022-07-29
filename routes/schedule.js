@@ -10,5 +10,7 @@ router.get('/view' , schedulesCtr.index)
 
 router.post('/' , adminCheck ,schedulesCtr.create)
 
+router.delete('/:id' , adminCheck ,schedulesCtr.delete)
+
 
 module.exports = router

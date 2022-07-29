@@ -5,7 +5,8 @@ const Schedule = require('../models/schedule')
 module.exports = {
     show,
     create,
-    index
+    index,
+    delete: deleteSchedule
 };
 
 async function show(req , res) {
@@ -33,5 +34,11 @@ async function create(req , res) {
 async function index(req , res){
     let schedules = await Schedule.find()
     res.render('./schedules' , {schedules})
+}
+
+async function deleteSchedule(req , res){
+    await Schedule.find()
+    await Schedule.deleteOne( {_id : req.params.id} )
+    res.redirect('/schedule/view')
 }
 
