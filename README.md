@@ -28,7 +28,7 @@ for logging in and out.
 
 ![Image of Home Screen Admin](https://i.imgur.com/d1nrH3w.png)
 
-![Image of Mobile Screen Admin](https://i.imgur.com/xKyviO4.png)
+![Image of Mobile Screen Admin](https://i.imgur.com/pn8Dx1b.png)
 
 ![Image of Scheduling](https://i.imgur.com/KKgd1mD.png)
 
