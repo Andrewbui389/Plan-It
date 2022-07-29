@@ -16,7 +16,6 @@ for logging in and out.
 [![Boostrap Icon](https://i.imgur.com/PyVDgn2.png)](https://getbootstrap.com/)
 [![MongoDB](https://i.imgur.com/ES0OwZ8.png)](https://www.mongodb.com/)
 [![Node](https://i.imgur.com/9133SUs.png)](https://nodejs.org/en/)
-[![Express](https://i.imgur.com/xxxjbkz.png)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 ------------
 
