@@ -10,7 +10,7 @@ for logging in and out.
 ------------
 
 ## Built With
-[![JavaScript Icon](https://i.imgur.com/8dlunYx.png)](https://www.javascript.com/)
+[![JavaScript Icon](https://i.imgur.com/8dlunYx.png) =250x250 ](https://www.javascript.com/)
 [![HTML Icon](https://i.imgur.com/a28wdJt.png)](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
 [![CSS Icon](https://i.imgur.com/xxxjbkz.png)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Boostrap Icon](https://i.imgur.com/GwevSVe.png)](https://getbootstrap.com/)
