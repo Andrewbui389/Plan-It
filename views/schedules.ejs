@@ -1,7 +1,7 @@
 <%-include('./partials/header.ejs')%> 
 <div class="container-fluid containerWidthSched">
     <div class="row schedHeight mainScreen">
-        <div class="d-flex col-12 flex-wrap align-content-start">
+        <div class="d-flex col-12 flex-wrap align-content-start justify-content-lg-start justify-content-center">
             <% schedules.forEach((x) => { %>
             <div class="card border-secondary  employeeCardLarge m-2 p-1 ">
                 <div class="card-body text-secondary">
@@ -9,6 +9,9 @@
                     <p class="card-text"> Shift Day: <%= x.start.toLocaleDateString() %>  </p>
                     <p class="card-text"> Start: <%= x.start.toLocaleTimeString('en-US') %> </p>
                     <p class="card-text"> End: <%= x.end.toLocaleTimeString('en-US') %> </p>
+                    <%if(user.Admin || user.name === x.name){%>
+                        <button class="btn btn-outline-info">test button</button>
+                    <%}%>
                 </div>
             </div>
             <% }) %>
