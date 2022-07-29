@@ -39,6 +39,7 @@
                     <th scope="col">Days Worked</th>
                     <th scope="col">Hours</th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +49,11 @@
                             <td><%= x.createdAt.toLocaleDateString() %></td>
                             <td><%= x.totalHours %></td>
                             <td><a href="/hours/<%= x._id %>/" class="btn btn-outline-success">Edit Hours</a></td>
+                            <td>
+                              <form method="POST" action="/hours/<%= x._id %>?_method=DELETE">
+                                  <button class="btn btn-outline-danger">Delete Hour</button>
+                              </form>
+                            </td>
                         </tr>
                     <% }) %>
                 </tbody>
