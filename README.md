@@ -4,6 +4,8 @@ Link to website : https://fado-management.herokuapp.com/
 
 Hello! This is my project Plan it, the goal of this app was too have a simple clock in and clock out app for small businesses along with scheduling. I wanted to make this 
 for a friend because he did not want all the additional features that are included forcefully in other applications. 
+This application is tailored to his specific needs and uses additional middleware to protect the users. The app uses google authentication 
+for logging in and out. 
 
 ------------
 
