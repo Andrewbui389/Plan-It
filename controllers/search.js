@@ -56,7 +56,7 @@ async function download(req , res) {
     xlsx.writeFile(wb, exportFileName)
 
     console.log(fs , 'break')
-    console.log(os)
+    console.log(os.homedir() , 'here')
 
     res.redirect('/search')
 }
