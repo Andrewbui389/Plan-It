@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const DayOf = require('../models/date');
 const xlsx = require('xlsx')
+const fs = require('fs')
 const path = require('path')
 let downloadPath = path.join(__dirname , `../workbook.xlsx`)
 
@@ -35,6 +36,11 @@ async function displayDates(req , res) {
 }
 
 async function download(req , res) {
+    fs.existsSync(downloadPath , (err) => {
+        fs.unlink(downloadPath, (err) => {
+            console.log('deleted')
+        })
+    })
     let headers = ['Employee Name', 'Date', 'Hours'];
     let dataExport = []
     data.forEach((x) => {
