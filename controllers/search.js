@@ -36,8 +36,8 @@ async function displayDates(req , res) {
 
 async function download(req , res) {
 
-    if(fs.existsSync(`${os.homedir()}/downloads/workbook.xlsx`)){
-        fs.unlink(`${os.homedir()}/downloads/workbook.xlsx` , (err) => {
+    if(fs.existsSync(`./downloads/workbook.xlsx`)){
+        fs.unlink(`./downloads/workbook.xlsx` , (err) => {
             if(err){
                 return err
             }
@@ -64,7 +64,7 @@ async function download(req , res) {
 
     let exportFileName = `workbook.xlsx`;
 
-    xlsx.writeFile(wb, `${os.homedir()}/downloads/${exportFileName}`)
+    xlsx.writeFile(wb, `./downloads/${exportFileName}`)
 
     res.redirect('/search')
 }
