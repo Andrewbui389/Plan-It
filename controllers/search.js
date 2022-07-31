@@ -1,8 +1,8 @@
 const User = require('../models/user');
 const DayOf = require('../models/date');
 const xlsx = require('xlsx')
-const fs = require('fs')
-const os = require('os')
+const path = require('path')
+let downloadPath = path.join(__dirname , `../workbook.xlsx`)
 
 module.exports = {
     searchForm,
@@ -54,11 +54,8 @@ async function download(req , res) {
     let exportFileName = `workbook.xlsx`;
 
     xlsx.writeFile(wb, exportFileName)
-
-    console.log(fs , 'break')
-    console.log(os.homedir() , 'here')
-
-    res.redirect('/search')
+    
+    res.download(downloadPath)
 }
 
 
