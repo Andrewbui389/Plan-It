@@ -4,7 +4,7 @@ const DayOf = require('../models/date');
 module.exports = {
     editForm,
     editHours,
-    delete: deleteHours
+    delete: deleteHours,
 }
 
 async function editForm(req , res) {
@@ -33,3 +33,4 @@ async function deleteHours(req , res) {
     let doc = await DayOf.deleteOne({_id : req.params.id})
     res.redirect('/admin')
 }
+

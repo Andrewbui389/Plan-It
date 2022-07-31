@@ -31,6 +31,7 @@
                         <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person icons"></i></a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                           <li> <a class="dropdown-item" href="/admin/new">Add Employee</a> </li>
+                          <li> <a class="dropdown-item" href="/search">Search Schedule</a> </li>
                           <li> <a class="dropdown-item" href="/schedule">Add Schedule</a> </li>
                           <li> <a class="dropdown-item" href="/schedule/view">View Schedules</a> </li>
                           <li> <a class="dropdown-item" href="/logout">Log Out</a> </li>
@@ -63,6 +64,10 @@
               <div class="d-flex justify-content-center align-items-center">
                 <i class="bi bi-calendar icons pe-2"></i>
                 <a class="sideBarButtons text-wrap anchor d-flex align-items-center" href="/schedule/view">View Schedules</a> 
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="bi bi-calendar icons pe-2"></i>
+                <a class="sideBarButtons text-wrap anchor d-flex align-items-center" href="/search">Search Schedule</a> 
               </div>
             <% } else if(!user.Admin) { %>
               <div class="d-flex justify-content-center align-items-center">
