@@ -35,17 +35,6 @@ async function displayDates(req , res) {
 }
 
 async function download(req , res) {
-
-    if(fs.existsSync(`./downloads/workbook.xlsx`)){
-        fs.unlink(`./downloads/workbook.xlsx` , (err) => {
-            if(err){
-                return err
-            }
-            else {
-                console.log('done')
-            }
-        })
-    }
     let headers = ['Employee Name', 'Date', 'Hours'];
     let dataExport = []
     data.forEach((x) => {
@@ -64,7 +53,7 @@ async function download(req , res) {
 
     let exportFileName = `workbook.xlsx`;
 
-    xlsx.writeFile(wb, `./downloads/${exportFileName}`)
+    xlsx.writeFile(wb, exportFileName)
 
     res.redirect('/search')
 }
