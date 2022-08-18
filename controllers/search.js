@@ -41,13 +41,15 @@ async function download(req , res) {
             console.log('deleted')
         })
     })
-    let headers = ['Employee Name', 'Date', 'Hours'];
+    let headers = ['Employee Name', 'Date','Clocked In', 'Clocked Out', 'Hours'];
     let dataExport = []
     data.forEach((x) => {
         let newObj = {}
         newObj['Employee Name'] = x.name
         newObj['Date'] = x.createdAt.toLocaleDateString()
         newObj['Hours'] = x.totalHours
+        newObj['Clocked In'] = x.ClockedIn
+        newObj['Clocked Out'] = x.ClockedOut
         dataExport.push(newObj)
     })
 

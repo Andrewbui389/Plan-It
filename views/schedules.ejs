@@ -10,7 +10,7 @@
                         <p class="card-text"> Shift Day: <%= x.start.toLocaleDateString() %>  </p>
                         <p class="card-text"> Start: <%= x.start.toLocaleTimeString('en-US') %> </p>
                         <p class="card-text"> End: <%= x.end.toLocaleTimeString('en-US') %> </p>
-                        <%if(user.Admin || user.name === x.name){%>
+                        <%if(user.Admin){%>
                             <form method="POST" action="/schedule/<%=x._id%>?_method=DELETE">
                                 <button class="btn btn-outline-info">delete card</button>
                             </form>
