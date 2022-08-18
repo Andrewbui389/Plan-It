@@ -28,6 +28,7 @@ async function searchForm(req , res) {
 
 async function displayDates(req , res) {
     data = await DayOf.find({createdAt : {$gte : req.body.from , $lte : req.body.to}})
+    console.log(data[0].clockedIn.toLocaleTimeString())
     try {
         return res.redirect('/search')
     } catch (err) {
@@ -48,8 +49,8 @@ async function download(req , res) {
         newObj['Employee Name'] = x.name
         newObj['Date'] = x.createdAt.toLocaleDateString()
         newObj['Hours'] = x.totalHours
-        newObj['Clocked In'] = x.ClockedIn
-        newObj['Clocked Out'] = x.ClockedOut
+        newObj['Clocked In'] = x.clockedIn.toLocaleTimeString()
+        newObj['Clocked Out'] = x.clockedOut.toLocaleTimeString()
         dataExport.push(newObj)
     })
 
